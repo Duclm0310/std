@@ -1,0 +1,33 @@
+<form action="/students/add" method="post" class="container col-md-8 card bg-warning">
+<h1 class="text-danger text-uppercase text-center">Add new Student</h1>
+<div class="form-group mt-3">
+    <label for="name" class="text-primary"> Name</label>
+    <input class="form-control" type="text" name="name" id="" required minlength="3" maxlength="30">
+</div>
+
+<div class="form-group mt-3">
+    <label for="date"  class="text-primary">Date of Birth</label>
+    <input type="date" name="Dob" id=""  required>
+</div>
+
+<div class="form-group mt-3">
+<label for="GPA" class="text-primary"> GPA</label>
+    <input class="form-control" type="number" name="GPA" id="" required min="0" max="10">
+</div>
+
+<div class="form-group mt-3">
+    <label for="gender"> Gender</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+</div>
+
+<div class="form-group mt-3">
+<label for="image" class="text-primary">Image</label>
+<input type="url" name="image" id="" required>
+</div>
+
+<div class="form-group mt-3 mb-3 text-center">
+<input type="submit" value="Add" class="btn btn-primary">
+<input type="reset" value="Clear" class="btn btn-success">
+</div>
+</form>
