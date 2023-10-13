@@ -5,8 +5,6 @@ const StudentModel = require('../models/Studentmodel');
 router.get('/', async (req, res) => {
 
     var students = await StudentModel.find();
-
-
     res.render('students/index', {students: students});
 })
 
@@ -49,5 +47,23 @@ console.log('Edit Success!');
 res.redirect('/students')
 })
 
+
+router.post('/search', async (req, res) => {
+    var keyword = req.body.name;
+    var students = await StudentModel.find({name: new RegExp (keyword, 'i')});
+    res.render('students/index', {students: students});
+})
+
+router.get('/nameasc', async (req, res) => {
+    var students = await StudentModel.find().sort({name: 1})
+    res.render('students/index', {students: students});
+
+})
+
+router.get('/namedesc', async (req, res) => {
+    var students = await StudentModel.find().sort({name: -1})
+    res.render('students/index', {students: students});
+
+})
 
 module.exports = router;

@@ -1,11 +1,28 @@
 <div class="container col-md-8 text-center">
    <table class="table table-danger">
       <tr>
-         <th colspan="3" class="h1 text-uppercase text-success">
+         <th colspan="4" class="h1 text-uppercase text-success">
             Student List
          </th>
+      </tr>
+      <tr>
          <th>
-            <a class="btn btn-primary" href="/add">Add</a>
+            <a class="btn btn-primary" href="/students/add">Add</a>
+         </th>
+         <th colspan="2">
+            <form action="/students/search" method="post">
+               <div class="form-group">
+                  <input class="form-control" type="search" placeholder="Search by student's name" name="name" id=""
+                     required>
+               </div>
+            </form>
+         </th>
+         <th colspan="2">
+            <select class="form-control" name="sort" id="" onchange="window.location.href=this.value">
+               <option value="#">Sort by</option>
+               <option value="/students/nameasc">Name asc</option>
+               <option value="/students/namedesc">Name desc</option>
+            </select>
          </th>
       </tr>
       <tr>
@@ -32,3 +49,58 @@
       {{/each}}
    </table>
 </div>
+
+
+
+{{!-- 
+<div class="container col-md-8 text-center">
+   <table class="table table-danger">
+      <tr>
+         <th colspan="4" class="h1 text-uppercase text-success">
+            Student List
+         </th>
+      </tr>
+      <tr>
+         <th>
+            <a class="btn btn-primary" href="/student/add">Add</a>
+         </th>
+         <th colspan="2">
+            <form action="/student/search" method="post">
+               <div class="form-group">
+                  <input class="form-control" type="search" placeholder="Search by student's name" name="name" id=""
+                     required>
+               </div>
+            </form>
+         </th>
+         <th colspan="2">
+            <select class="form-control" name="sort" id="" onchange="window.location.href=this.value">
+               <option value="#">Sort by</option>
+               <option value="/student/nameasc">Name asc</option>
+               <option value="/student/namedesc">Name desc</option>
+            </select>
+         </th>
+      </tr>
+      <tr>
+         <th>Student Name</th>
+         <th>Student Birthday</th>
+         <th>Student Image</th>
+         <th>Menu</th>
+      </tr>
+      {{#each students }}
+      <tr>
+         <td>{{ name }}</td>
+         <td>{{ dateFormat Dob "DD/MM/YYYY" }}</td>
+         <td>
+            <a href="/student/detail/{{ _id }}">
+               <img src="{{ image }}" width="150" height="150">
+            </a>
+         </td>
+         <td>
+            <a class="btn btn-warning" href="/student/edit/{{ _id }}">Edit</a>
+            <a class="btn btn-danger" href="/student/delete/{{ _id }}"
+               onclick="return confirm('Are you sure to delete this student ?');">Delete</a>
+         </td>
+      </tr>
+      {{/each}}
+   </table>
+</div> --}}

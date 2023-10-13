@@ -26,6 +26,7 @@ var uri = "mongodb+srv://duclmgch211370:leduc0310@cluster0.0nmhrw9.mongodb.net/C
 mongoose.connect(uri)
 .then(() => console.log ("Connect to DB succeed !"))
 .catch((err) => console.log (err));
+mongoose.set('strictQuery', false);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
